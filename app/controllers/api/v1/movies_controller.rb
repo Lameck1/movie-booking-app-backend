@@ -26,6 +26,7 @@ module Api
         end
       end
 
+      # DELETE /movies/1
       def destroy
         @movie = Movie.find(params[:id]).destroy!
 
@@ -36,7 +37,6 @@ module Api
           render json: @reservation.errors, status: :unprocessable_entity
         end
       end
-
     end
   end
 end
