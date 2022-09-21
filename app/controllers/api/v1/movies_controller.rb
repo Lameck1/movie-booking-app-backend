@@ -25,6 +25,18 @@ module Api
           render json: { success: false, errors: new_movie.errors }, status: :unprocessable_entity
         end
       end
+
+      def destroy
+        @movie = Movie.find(params[:id]).destroy!
+
+        if @movie.destroy
+          render json: { message: 'Reservation successfully deleted' }
+
+        else
+          render json: @reservation.errors, status: :unprocessable_entity
+        end
+      end
+
     end
   end
 end
