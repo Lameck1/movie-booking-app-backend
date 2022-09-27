@@ -14,5 +14,4 @@ test:
 
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
   database: movie_booking_app_backend_production
